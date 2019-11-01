@@ -2,14 +2,151 @@
     ViewData["Title"] = "Login/Registration";
 }
 
+@model ViewModel
 <div class="text-center">
     <h1 style="margin:2.5%;">Welcome to the Activity Center</h1>
     <!-- Login -->
     <div>
-        <partial name="LoginPartial">
+            <div>
+                    <form asp-controller="Home" asp-action="LoginConfirm" method="POST">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th><h2>Login</h2></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        <!-- Email -->
+                          <tr>
+                            <td>
+                              <label asp-for="LoginUser.Email"></label>
+                            </td>
+                            <td>
+                              <input type="email" asp-for="LoginUser.Email"></label>
+                              <p><span asp-validation-for="LoginUser.Email"></span></p>
+                            </td>
+                          </tr>
+                          <!-- Password -->
+                          <tr>
+                            <td>
+                              <label asp-for="LoginUser.Password"></label>
+                            </td>
+                            <td>
+                              <input type="password" asp-for="LoginUser.Password"></label>
+                              <p>
+                                <span asp-validation-for="LoginUser.Password"></span>
+                              </p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td>
+                              <input type="submit" value="Log In">
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </form>
+                  </div>
     </div>
     <!-- Register -->
     <div>
-        <partial name="RegistrationPartial">
+            <div>
+                    <form asp-controller="Home" asp-action="Register">
+                      <div style="display:flex;">
+                        <!-- Left Half -->
+                        <table>
+                          <thead>
+                            <tr>
+                              <th><h2>Register</h2></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <!-- First Name -->
+                            <tr>
+                              <td>
+                                <label asp-for="User.FirstName"></label>
+                              </td>
+                              <td>
+                                <input type="text" asp-for="User.FirstName">
+                                <p>
+                                    <span asp-validation-for="User.FirstName"></span>
+                                </p>
+                              </td>
+                            </tr>
+                            <!-- Last Name -->
+                            <tr>
+                              <td>
+                                <label asp-for="User.LastName"></label>
+                              </td>
+                              <td>
+                                <input type="text" asp-for="User.LastName">
+                                <p>
+                                    <span asp-validation-for="User.LastName"></span>
+                                </p>
+                              </td>
+                            </tr>
+                            <!-- Email -->
+                            <tr>
+                              <td>
+                                <label asp-for="User.Email"></label>
+                              </td>
+                              <td>
+                                <input type="email" asp-for="User.Email">
+                                <p>
+                                    <span asp-validation-for="User.Email"></span>
+                                </p>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- Password Half -- Right -->
+                        <table style="margin-left: 10%;">
+                            <thead>
+                                <tr>
+                                <th><h2> <br></h2></th>
+                                </tr>
+                              </thead>
+                          <tbody>
+                            <!-- Password -->
+                            <tr>
+                              <td>
+                                <label asp-for="User.Password"></label>
+                              </td>
+                              <td>
+                                <input 
+                                  type="password" 
+                                  asp-for="User.Password"
+                                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                                  title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                                  >
+                                  <p>
+                                    <span asp-validation-for="User.Password"></span>
+                                  </p>
+                              </td>
+                            </tr>
+                            <!-- Password -->
+                            <tr>
+                              <td>
+                                <label asp-for="User.Confirm"></label>
+                              </td>
+                              <td>
+                                <input type="password" asp-for="User.Confirm">
+                                <p>
+                                    <span asp-validation-for="User.Confirm"></span>
+                                </p>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td>
+                                <input type="submit" value="Register">
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </form>
+                  </div>
     </div>
 </div>
