@@ -37,7 +37,7 @@ namespace ActivityCenter
         public void ConfigureServices(IServiceCollection services)
         {
             // DB connection
-
+            services.AddDbContext<ActivityCenter.Models.ACContext>(options => options.UseMySql(Configuration["DBInfo:ConnectionString"]));
             // Session
             services.AddSession();
             // Mvc
