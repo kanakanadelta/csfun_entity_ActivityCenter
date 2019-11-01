@@ -57,6 +57,7 @@ namespace ActivityCenter.Controllers
 
             List<Event> events = dbContext
                 .Events
+                .Where(e => e.EventDateTime > DateTime.Now)
                 .OrderBy(e => e.EventDateTime)
                 .Include(e => e.Associations)
                 .Include(e => e.Planner)
