@@ -261,12 +261,12 @@ namespace ActivityCenter.Controllers
         }
 
         [HttpPost("register")]
-        public IActionResult Register(User user)
+        public IActionResult Register(ViewModel userSubmission)
         {
             if(ModelState.IsValid)
             {
                 // Invalid Email //
-                if(dbContext.Users.Any(u => u.Email == user.Email))
+                if(dbContext.Users.Any(u => u.Email == userSubmission.User.Email))
                 {
 
                     ModelState.AddModelError("Email", "This Email is already in use!");
@@ -275,7 +275,7 @@ namespace ActivityCenter.Controllers
                 }
 
                 // invalid Password //
-                if(user.Password != user.Confirm)
+                if(userSubmission.User.Password != userSubmission.User.Confirm)
                 {
                     // Manually add a ModelState error to the Email field, with provided
                     // error message
@@ -290,12 +290,12 @@ namespace ActivityCenter.Controllers
                 // Initialize the hasher object
                 var hasher = new PasswordHasher<User>();
 
-                user.Password = hasher.HashPassword(user, user.Password);
-                dbContext.Add(user);
+                userSubmission.User.Password = hasher.HashPassword(userSubmission.User, userSubmission.User.Password);
+                dbContext.Add(userSubmission.User);
                 dbContext.SaveChanges();
 
-                HttpContext.Session.SetString("UserName", user.FirstName);
-                HttpContext.Session.SetInt32("UserId", user.UserId);
+                HttpContext.Session.SetString("UserName", userSubmission.User.FirstName);
+                HttpContext.Session.SetInt32("UserId", userSubmission.User.UserId);
                 return RedirectToAction("Home");
             }
             else
@@ -303,12 +303,12 @@ namespace ActivityCenter.Controllers
         }
 
         [HttpPost("loginconfirm")]
-        public IActionResult LoginConfirm(LoginUser userSubmission)
+        public IActionResult LoginConfirm(ViewModel userSubmission)
         {
             if(ModelState.IsValid)
             {
                 // If inital ModelState is valid, query for a user with provided email
-                var userInDb = dbContext.Users.FirstOrDefault(u => u.Email == userSubmission.Email);
+                var userInDb = dbContext.Users.FirstOrDefault(u => u.Email == userSubmission.LoginUser.Email);
                 // If no user exists with provided email
                 if(userInDb == null)
                 {
@@ -320,7 +320,7 @@ namespace ActivityCenter.Controllers
                 var hasher = new PasswordHasher<LoginUser>();
                 
                 // verify provided password against hash stored in db
-                var result = hasher.VerifyHashedPassword(userSubmission, userInDb.Password, userSubmission.Password);
+                var result = hasher.VerifyHashedPassword(userSubmission.LoginUser, userInDb.Password, userSubmission.LoginUser.Password);
                 
                 // result can be compared to 0 for failure
                 if(result == 0)

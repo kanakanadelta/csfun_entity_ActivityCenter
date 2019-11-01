@@ -25,3 +25,7 @@ a.navbar-brand {
   background-color: #999999;
   color: #000;
 }
+
+span {
+  color: red;
+}

@@ -17,7 +17,7 @@
               </td>
               <td>
                 <input type="text" asp-for="FirstName">
-                <p asp-validation-for="FirstName"></p>
+                <span asp-validation-for="FirstName"></span>
               </td>
             </tr>
             <!-- Last Name -->
@@ -27,7 +27,7 @@
               </td>
               <td>
                 <input type="text" asp-for="LastName">
-                <p asp-validation-for="LastName"></p>
+                <span asp-validation-for="LastName"></span>
               </td>
             </tr>
             <!-- Email -->
@@ -37,7 +37,7 @@
               </td>
               <td>
                 <input type="email" asp-for="Email">
-                <p asp-validation-for="Email"></p>
+                <span asp-validation-for="Email"></span>
               </td>
             </tr>
           </tbody>
@@ -62,7 +62,9 @@
                   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
                   title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
                   >
-                <p asp-validation-for="Password"></p>
+                  <p>
+                    <span asp-validation-for="Password"></span>
+                  </p>
               </td>
             </tr>
             <!-- Password -->
@@ -72,7 +74,7 @@
               </td>
               <td>
                 <input type="password" asp-for="Confirm">
-                <p asp-validation-for="Confirm"></p>
+                <span asp-validation-for="Confirm"></span>
               </td>
             </tr>
             <tr>
