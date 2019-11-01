@@ -27,3 +27,6 @@
 /Users/rtongson/Documents/csharp/exam/ActivityCenter/obj/Debug/netcoreapp2.2/ActivityCenter.dll
 /Users/rtongson/Documents/csharp/exam/ActivityCenter/obj/Debug/netcoreapp2.2/ActivityCenter.pdb
 /Users/rtongson/Documents/csharp/exam/ActivityCenter/obj/Debug/netcoreapp2.2/ActivityCenter.csproj.CopyComplete
+/Users/rtongson/Documents/csharp/exam/ActivityCenter/obj/Debug/netcoreapp2.2/Razor/Views/Home/LoginPartial.g.cshtml.cs
+/Users/rtongson/Documents/csharp/exam/ActivityCenter/obj/Debug/netcoreapp2.2/Razor/Views/Home/RegistrationPartial.g.cshtml.cs
+/Users/rtongson/Documents/csharp/exam/ActivityCenter/obj/Debug/netcoreapp2.2/Razor/Views/Home/Home.g.cshtml.cs

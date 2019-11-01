@@ -1,8 +1,15 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Login/Registration";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 style="margin:2.5%;">Welcome to the Activity Center</h1>
+    <!-- Login -->
+    <div>
+        <partial name="LoginPartial">
+    </div>
+    <!-- Register -->
+    <div>
+        <partial name="RegistrationPartial">
+    </div>
 </div>

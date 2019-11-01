@@ -2966,8 +2966,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views/Home/LoginPartial.cshtml",
+      "TargetPath": "Views/Home/LoginPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views/Home/NavBarPartial.cshtml",
+      "TargetPath": "Views/Home/NavBarPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views/Home/Index.cshtml",
       "TargetPath": "Views/Home/Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views/Home/Home.cshtml",
+      "TargetPath": "Views/Home/Home.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -2993,6 +3008,11 @@
     {
       "FilePath": "Views/Shared/_Layout.cshtml",
       "TargetPath": "Views/Shared/_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views/Home/RegistrationPartial.cshtml",
+      "TargetPath": "Views/Home/RegistrationPartial.cshtml",
       "FileKind": "mvc"
     }
   ],
