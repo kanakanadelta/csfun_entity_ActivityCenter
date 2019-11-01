@@ -14,16 +14,16 @@
           <input type="submit" value="Drop" style="padding:10px 20px;font-size:20px;">
         </form>
       }
+      else if(@Model.Planner.UserId == @ViewBag.UserId)
+      {
+        <form action='@Model.EventId/delete' method="POST">
+          <input type="submit" value="Delete" style="padding:10px 20px;font-size:20px;">
+        </form>
+      }
       else
       {
         <form action='/events/@Model.EventId/join' method="POST">
           <input type="submit" value="Join" style="padding:10px 20px;font-size:20px;">
-        </form>
-      }
-      @if(@Model.Planner.UserId == @ViewBag.UserId)
-      {
-        <form action='@Model.EventId/delete' method="POST">
-          <input type="submit" value="Delete" style="padding:10px 20px;font-size:20px;">
         </form>
       }
     </div>
