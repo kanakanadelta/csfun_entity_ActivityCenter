@@ -3,14 +3,16 @@ using System;
 using ActivityCenter.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ActivityCenter.Migrations
 {
     [DbContext(typeof(ACContext))]
-    partial class ACContextModelSnapshot : ModelSnapshot
+    [Migration("20191101183707_MakePlannerMigration")]
+    partial class MakePlannerMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

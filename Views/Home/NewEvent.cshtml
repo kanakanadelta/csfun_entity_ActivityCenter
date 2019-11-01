@@ -1,0 +1,83 @@
+@{
+  ViewData["Title"] = "New Activity";
+}
+
+
+<div>
+  <!-- NAVBAR -->
+  <partial name="NavBarPartial">
+  @model Event
+  <form asp-controller="Home" asp-action="CreateEvent" method="POST">
+    <div style="display:flex;justify-content:space-around;">
+      <!-- left table -->
+      <table>
+        <tbody>
+          <!-- Title -->
+          <tr>
+            <td>
+              <label asp-for="Title"></label>
+            </td>
+            <td>
+              <input asp-for="Title">
+              <p>
+                <span asp-validation-for="Title"></span>
+              </p>
+            </td>
+          </tr>
+          <!-- Date -->
+          <tr>
+            <td>
+              <label asp-for="EventDate"></label>
+            </td>
+            <td>
+              <input type="date" asp-for="EventDate">
+              <p>
+                <span asp-validation-for="EventDate"></span>
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- right table -->
+      <table>
+        <!-- Time -->
+        <tr>
+          <td>
+            <label asp-for="EventTime"></label>
+          </td>
+          <td>
+            <input type="time" asp-for="EventTime">
+            <p>
+              <span asp-validation-for="EventTime"></span>
+            </p>
+          </td>
+        </tr>
+        <!-- Time -->
+        <tr>
+          <td>
+            <label asp-for="Duration"></label>
+          </td>
+          <td>
+            <input type="number" asp-for="Duration">
+            <p>
+              <span asp-validation-for="Duration"></span>
+            </p>
+          </td>
+          <td>
+            <select name="durationType">
+              <option value="Days">Days</option>
+              <option value="Hours">Hours</option>
+              <option value="Minutes">Minutes</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <!-- description -->
+    <div style="margin:0 auto;width:80%;">
+      <label asp-for="Description"></label>
+      <textarea asp-for="Description" style="width: 100%;"></textarea>
+      <input type="submit" value="Create Activity" style="float:right">
+    </div>
+  </form>
+</div>

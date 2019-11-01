@@ -39,6 +39,8 @@ namespace ActivityCenter.Models
         [DataType(DataType.Text)]
         public string Description { get; set; }
 
+        public User Planner { get; set; }
+
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; } = DateTime.Now;
 

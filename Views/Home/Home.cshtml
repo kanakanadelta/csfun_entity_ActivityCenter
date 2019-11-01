@@ -1,12 +1,78 @@
 @{
   ViewData["Title"] = "Home";
-
 }
 
 <div>
   <!-- NAVBAR -->
-  <partial name="NavBarPartial">
-
-  <h1>Welcome, @ViewBag.UserName</h1>
-  <p>id# 00000 @ViewData["UserId"]</p>
+  <partial name="HomeNavPartial">
+  <!-- TABLE -->
+  <table id="events-table" style="width:100%;border:1.5px solid #000;">
+    <thead>
+      <thead>
+        <tr>
+          <th>Activity</th>
+          <th>Date and Time</th>
+          <th>Duration</th>
+          <th>Event Coordinator</th>
+          <th>Number of Participants</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+    </thead>
+    <tbody>
+      <!-- Dynamically Render rows for body -->
+      @foreach(var e in @ViewBag.Events)
+      {
+        <!-- Title -->
+        <tr>
+          <td>
+            <a href='/events/@e.EventId'>
+              @e.Title
+            </a>
+          </td>
+          <!-- Date and Time -->
+          <td>
+            @e.EventDateTime.ToString("MM/dd") &commat; @e.EventDateTime.ToString("hh:mm tt")
+          </td>
+          <!-- Duration -->
+          <td>
+            @e.Duration
+          </td>
+          <!-- Planner -->
+          <td>
+            @e.Planner.FirstName @e.Planner.LastName
+          </td>
+          <!-- Number of Participants -->
+          <td>
+            @e.Associations.Count
+          </td>
+          <!-- Actions -->
+          <td>
+            @if(e.Planner.UserId == @ViewBag.UserId)
+            {
+              <form action='events/@e.EventId/delete' method="POST">
+                <input type="submit" value="Delete">
+              </form>
+            }
+            else if(@ViewBag.UserEvents.Contains(e))
+            {
+              <form action='events/@e.EventId/unRsvp' method="POST">
+                <input type="submit" value="Un-RSVP">
+              </form>
+            }
+            else
+            {
+              <form action='events/@e.EventId/rsvp' method="POST">
+                <input type="submit" value="RSVP">
+              </form>
+            }
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+  <!-- New Activity Button -->
+  <button style="float:right;margin:10px;">
+    <a asp-controller="Home" asp-action="NewEvent" style="color:#000;text-decoration:none;">Add New Activity</a> 
+  </button>
 </div>

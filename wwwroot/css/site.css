@@ -5,3 +5,23 @@ a.navbar-brand {
   word-break: break-all;
 }
 
+.nav-item li {
+  color: rgb(65, 118, 164);
+}
+
+#events-table table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#events-table th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+#events-table tr:nth-child(even){background-color: #f2f2f2}
+
+#events-table th {
+  background-color: #999999;
+  color: #000;
+}

@@ -30,3 +30,7 @@
 /Users/rtongson/Documents/csharp/exam/ActivityCenter/obj/Debug/netcoreapp2.2/Razor/Views/Home/LoginPartial.g.cshtml.cs
 /Users/rtongson/Documents/csharp/exam/ActivityCenter/obj/Debug/netcoreapp2.2/Razor/Views/Home/RegistrationPartial.g.cshtml.cs
 /Users/rtongson/Documents/csharp/exam/ActivityCenter/obj/Debug/netcoreapp2.2/Razor/Views/Home/Home.g.cshtml.cs
+/Users/rtongson/Documents/csharp/exam/ActivityCenter/obj/Debug/netcoreapp2.2/Razor/Views/Home/NavBarPartial.g.cshtml.cs
+/Users/rtongson/Documents/csharp/exam/ActivityCenter/obj/Debug/netcoreapp2.2/Razor/Views/Home/NewEvent.g.cshtml.cs
+/Users/rtongson/Documents/csharp/exam/ActivityCenter/obj/Debug/netcoreapp2.2/Razor/Views/Home/HomeNavPartial.g.cshtml.cs
+/Users/rtongson/Documents/csharp/exam/ActivityCenter/obj/Debug/netcoreapp2.2/Razor/Views/Home/ShowEvent.g.cshtml.cs

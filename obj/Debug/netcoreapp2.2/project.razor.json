@@ -2961,6 +2961,11 @@
   "RootNamespace": "ActivityCenter",
   "Documents": [
     {
+      "FilePath": "Views/Home/NewEvent.cshtml",
+      "TargetPath": "Views/Home/NewEvent.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views/Home/Privacy.cshtml",
       "TargetPath": "Views/Home/Privacy.cshtml",
       "FileKind": "mvc"
@@ -2968,6 +2973,16 @@
     {
       "FilePath": "Views/Home/LoginPartial.cshtml",
       "TargetPath": "Views/Home/LoginPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views/Home/ShowEvent.cshtml",
+      "TargetPath": "Views/Home/ShowEvent.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views/Home/HomeNavPartial.cshtml",
+      "TargetPath": "Views/Home/HomeNavPartial.cshtml",
       "FileKind": "mvc"
     },
     {

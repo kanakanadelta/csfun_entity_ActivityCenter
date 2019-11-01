@@ -1,0 +1,55 @@
+@{
+  ViewData["Title"] = "Activity";
+}
+
+@model Event
+<div>
+  <partial name="NavBarPartial">
+  <div style="display:flex; padding:20px;">
+    <h2 style="width:80%">@Model.Title</h2>
+    <div style="width:20%;">
+      @if(@ViewBag.UserEvents.Contains(@Model))
+      {
+        <form action='/events/@Model.EventId/drop' method="POST">
+          <input type="submit" value="Drop" style="padding:10px 20px;font-size:20px;">
+        </form>
+      }
+      else
+      {
+        <form action='/events/@Model.EventId/join' method="POST">
+          <input type="submit" value="Join" style="padding:10px 20px;font-size:20px;">
+        </form>
+      }
+      @if(@Model.Planner.UserId == @ViewBag.UserId)
+      {
+        <form action='@Model.EventId/delete' method="POST">
+          <input type="submit" value="Delete" style="padding:10px 20px;font-size:20px;">
+        </form>
+      }
+    </div>
+    
+  </div>
+  <div>
+    <!-- Planner -->
+    <h3>Event Coordinator: @Model.Planner.FirstName</h3>
+    <br>
+    <!-- Description -->
+    <div>
+        <h3>Description</h3>
+        <p style="margin:0 20px">
+        @Model.Description
+      </p>
+    </div>
+    <br>
+    <!-- Participants -->
+    <div>
+      <h3>Participants:</h3>
+      <ul>
+        @foreach(var p in @ViewBag.Participants)
+        {
+          <li>@p.FirstName</li>
+        }
+      </ul>
+    </div>
+  </div>
+</div>
